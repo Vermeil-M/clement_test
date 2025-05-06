@@ -5,12 +5,9 @@
   <title>Carte OpenLayers</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css" />
   <style>
-    html, body {
+    html, body, #map {
       margin: 0;
       padding: 0;
-      height: 100%;
-    }
-    #map {
       width: 100%;
       height: 100%;
     }
@@ -18,6 +15,52 @@
 </head>
 <body>
   <div id="map"></div>
-  <script type="module" src="carte.js"></script>
+  <div class="popup">
+    <div class="popup-row">
+      <input type="text" class="popup-input" placeholder="Départ">
+      <button class="popup-button">Valider</button>
+    </div>
+    <div class="popup-row">
+      <input type="text" class="popup-input" placeholder="Arrivée">
+      <button class="popup-button">Tracer</button>
+    </div>
+  </div>
+  <script src="carte.js"></script>
 </body>
 </html>
+<style>
+    .popup {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(180, 160, 200, 0.5); /* violet transparent */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popup-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.popup-input {
+  flex: 1;
+  padding: 4px;
+  background-color: lightgreen;
+  border: 1px solid #888;
+  border-radius: 4px;
+}
+
+.popup-button {
+  background-color: lightblue;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+</style>
