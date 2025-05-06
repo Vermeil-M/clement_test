@@ -4,6 +4,7 @@ const Graph = require('node-dijkstra');
 const app = express();
 const port = 3000;
 
+app.use(express.static('public'));
 
 
 // Route API pour calculer le chemin
