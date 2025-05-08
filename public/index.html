@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte OpenLayers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css" />
+  <style>
+    html, body, #map {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div id="map"></div>
+
+  <div id="info-box">
+    <div id="info-box_courte">Longueur du trajet le plus court : 0 m</div>
+    <div id="info-box_viable">Longueur du trajet le plus viable : 0 m</div>
+  </div>
+
+  <div class="popup">
+    <div class="popup-row">
+      <input type="text" class="popup-input" placeholder="Départ">
+      <button class="popup-button">Valider</button>
+    </div>
+
+    <div class="popup-row">
+      <input type="text" class="popup-input" placeholder="Arrivée">
+      <button class="popup-button">Tracer</button>
+    </div>
+  </div>
+  <script src="carte_exe.js"></script>
+</body>
+</html>
+<style>
+    .popup {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(180, 160, 200, 0.5); /* violet transparent */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popup-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.popup-input {
+  flex: 1;
+  padding: 4px;
+  background-color: lightgreen;
+  border: 1px solid #888;
+  border-radius: 4px;
+}
+
+.popup-button {
+  background-color: lightblue;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+
+#info-box {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* espace vertical entre les lignes */
+}
+</style>
